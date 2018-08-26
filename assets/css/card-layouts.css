@@ -1,0 +1,60 @@
+.card-layout-featured .card-category {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.card-layout-featured .big-card {
+  line-height: 1.875;
+}
+
+.card-layout-featured .big-card .thumbnail {
+  height: 300px;
+  background-image: url(//via.placeholder.com/350x200);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-layout-featured .big-card .details .title {
+  margin-top: 10px;
+  font-size: 32px;
+}
+
+.card-layout-featured .big-card .details .description {
+  height: 65px;
+  overflow: hidden;
+}
+
+.card-layout-featured .small-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.card-layout-featured .small-card:first-of-type {
+  margin-top: 0;
+}
+
+.card-layout-featured .small-card .thumbnail {
+  min-width: 90px;
+  height: 90px;
+  margin-right: 15px;
+  background-image: url(//via.placeholder.com/90x90);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-layout-featured .small-card .details {
+  min-width: calc(100% - 15px - 90px);
+}
+
+.card-layout-featured .small-card .title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card-layout-featured .small-card .single-line {
+  height: 24px;
+}
