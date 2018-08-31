@@ -1,10 +1,10 @@
 <?php
 
-function geralt_card_layout_general ($category_id) { echo ''?>
+function geralt_card_layout_general ($category_id, $show_categories = true) { echo ''?>
 
 <div class="row section">
 	<div class="col-md-12">
-		<h2 class="mt-70 txt-o">Latest posts<?php echo get_cat_name($category_id) ?></h2>
+		<h2 class="mt-70 txt-o"><?php echo $category_id ? get_cat_name($category_id) : "Latest posts" ?></h2>
 	</div>
 </div>
 <div class="row">
@@ -26,21 +26,34 @@ function geralt_card_layout_general ($category_id) { echo ''?>
 			?>
 			<div class="col-md-4">
 				<article class="c-card">
-					<div class="c-card__thumbnail" style="background-image: url(<?php echo esc_attr($thumbnail_url) ?>)"></div>
+					<?php if ($thumbnail_url) : ?>
+						<div class="c-card__thumbnail" style="background-image: url(<?php echo esc_attr($thumbnail_url) ?>)"></div>
+					<?php else : ?>
+						<div class="c-card__thumbnail"></div>
+					<?php endif ?>
+
 					<div class="c-card__info">
 						<a class="c-card__basic" href="<?php the_permalink() ?>">
 							<h1 class="c-card__title"><?php the_title() ?></h1>
 							<div class="c-card__excerpt"><?php the_excerpt() ?></div>
 						</a>
 						<div class="c-card__footer">
-							<div class="c-card__author"><?php the_author() ?></div>
-							<div class=""><?php the_author() ?></div>
+							<div class="c-card__author">
+								<i class="fa fa-user"></i>
+								<?php the_author() ?>
+							</div>
+							<div class="">
+								<i class="fa fa-calendar-alt"></i>
+								<?php the_date('M n') ?>
+							</div>
 						</div>
 					</div>
 
-					<div class="c-card__categories">
-						<span class="c-card__category">Featured</span>
-					</div>
+					<?php if ($show_categories) : ?>
+						<div class="c-card__categories">
+							<span class="c-card__category">Featured</span>
+						</div>
+					<?php endif ?>
 				</article>
 			</div>
 

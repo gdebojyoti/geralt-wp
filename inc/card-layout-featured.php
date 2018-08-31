@@ -22,7 +22,10 @@ function geralt_card_layout_featured ($category_id) { echo ''?>
 					<a href="<?php the_permalink() ?>">
 						<h1 class="c-card-featured__title"><?php the_title() ?></h1>
 					</a>
-					<div class="c-card-featured__author"><?php the_author() ?></div>
+					<div class="c-card-featured__author">
+						<i class="fa fa-user"></i>
+						<?php the_author() ?>
+					</div>
 				</div>
 
 				<div class="c-card-featured__categories">
@@ -56,7 +59,10 @@ function geralt_card_layout_featured ($category_id) { echo ''?>
 						<a href="<?php the_permalink() ?>">
 							<h1 class="c-card-featured__title c-card-featured__title--small"><?php the_title() ?></h1>
 						</a>
-						<div class="c-card-featured__author c-card-featured__author--small"><?php the_author() ?></div>
+						<div class="c-card-featured__author c-card-featured__author--small">
+							<i class="fa fa-user"></i>
+							<?php the_author() ?>
+						</div>
 					</div>
 
 					<div class="c-card-featured__categories">
