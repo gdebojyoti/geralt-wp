@@ -2,7 +2,7 @@
 
 function geralt_card_layout_featured ($category_id) { echo ''?>
 
-<div class="row mv-30 card-layout-featured">
+<div class="row section">
 	<div class="col-md-8">
 		
 		<?php
@@ -14,33 +14,32 @@ function geralt_card_layout_featured ($category_id) { echo ''?>
 			while ($wp_query->have_posts()) : $wp_query->the_post();
 		?>
 
-			<article class="big-card">
-				<?php
-					$thumbnail_url = get_the_post_thumbnail_url();
-				?>
-				<?php if ($thumbnail_url == null) : ?>
-					<div class="thumbnail"></div>
-				<?php else : ?>
-					<div class="thumbnail" style="background-image: url(<?php echo esc_attr($thumbnail_url) ?>)"></div>
-				<?php endif ?>
-				<div class="details">
-					<h1 class="title"><?php the_title() ?></h1>
-					<div class="description"><?php the_excerpt() ?></div>
-					<a href="<?php the_permalink() ?>" class="btn btn-primary">Read more</a>
+			<?php
+				$thumbnail_url = get_the_post_thumbnail_url();
+			?>
+			<article class="c-card-featured" style="background-image: url(<?php echo esc_attr($thumbnail_url) ?>)">
+				<div class="c-card-featured__info">
+					<a href="<?php the_permalink() ?>">
+						<h1 class="c-card-featured__title"><?php the_title() ?></h1>
+					</a>
+					<div class="c-card-featured__author"><?php the_author() ?></div>
+				</div>
+
+				<div class="c-card-featured__categories">
+					<span class="c-card-featured__category">Featured</span>
+					<span class="c-card-featured__category">Cars</span>
 				</div>
 			</article>
 
 		<?php endwhile ?>
 
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 m-hor-scroller">
 
-		<h2 class="card-category txt-o"><?php echo get_cat_name($category_id) ?></h2>
-		
 		<?php
 			$args = array(
 				'cat'            => $category_id,
-				'posts_per_page' => 4 // 4 side posts
+				'posts_per_page' => 2 // 2 side posts
 			);
 			$wp_query = new WP_Query( $args );
 			$post_index = 0;
@@ -49,20 +48,21 @@ function geralt_card_layout_featured ($category_id) { echo ''?>
 
 			<?php if ($post_index > -1) : ?>
 
-				<a class="small-card" href="<?php the_permalink() ?>">
-					<?php
-						$thumbnail_url = get_the_post_thumbnail_url();
-					?>
-					<?php if ($thumbnail_url == null) : ?>
-						<div class="thumbnail"></div>
-					<?php else : ?>
-						<div class="thumbnail" style="background-image: url(<?php echo esc_attr($thumbnail_url) ?>)"></div>
-					<?php endif ?>
-					<div class="details">
-						<h4 class="title"><?php the_title() ?></h4>
-						<div class="single-line txt-o"><?php the_author() ?></div>
+				<?php
+					$thumbnail_url = get_the_post_thumbnail_url();
+				?>
+				<article class="c-card-featured c-card-featured--small" style="background-image: url(<?php echo esc_attr($thumbnail_url) ?>)">
+					<div class="c-card-featured__info">
+						<a href="<?php the_permalink() ?>">
+							<h1 class="c-card-featured__title c-card-featured__title--small"><?php the_title() ?></h1>
+						</a>
+						<div class="c-card-featured__author c-card-featured__author--small"><?php the_author() ?></div>
 					</div>
-				</a>
+
+					<div class="c-card-featured__categories">
+						<span class="c-card-featured__category">Featured</span>
+					</div>
+				</article>
 
 			<?php endif ?>
 

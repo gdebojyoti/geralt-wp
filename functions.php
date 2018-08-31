@@ -18,8 +18,10 @@ function geralt_enqueue_styles () {
 	wp_enqueue_style('bootstrap', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 	// stylesheets
 	wp_enqueue_style('geralt-styles', get_stylesheet_uri());
+	wp_enqueue_style('geralt-styles-mobile', get_template_directory_uri() . '/assets/css/mobile.css');
 	wp_enqueue_style('geralt-styles-utilities', get_template_directory_uri() . '/assets/css/utilities.css');
-	wp_enqueue_style('geralt-styles-cards', get_template_directory_uri() . '/assets/css/card-layouts.css');
+	wp_enqueue_style('geralt-styles-card-layouts', get_template_directory_uri() . '/assets/css/card-layouts.css');
+	wp_enqueue_style('geralt-styles-cards', get_template_directory_uri() . '/assets/css/cards.css');
 	// Font awesome
 	wp_enqueue_style('font-awesome-base', '//use.fontawesome.com/releases/v5.2.0/css/fontawesome.css');
 	wp_enqueue_style('font-awesome-solid-icons', '//use.fontawesome.com/releases/v5.2.0/css/solid.css');
@@ -105,6 +107,20 @@ function geralt_sc_card_featured( $atts = [], $content = null ) {
 	echo geralt_card_layout_featured($category_id);
 }
 add_shortcode( 'card-layout-featured', 'geralt_sc_card_featured' );
+
+
+// General card layout
+// usage: [card-layout category="category title"]
+require_once get_template_directory() . '/inc/card-layout-general.php'; // Include general card layout definition
+function geralt_sc_card_general( $atts = [], $content = null ) {
+	extract( shortcode_atts( array (
+		'category' => '',
+	), $atts ) );
+
+	$category_id = get_cat_ID($category);
+	echo geralt_card_layout_general($category_id);
+}
+add_shortcode( 'card-layout', 'geralt_sc_card_general' );
 
 
 // Theme check recommendation
