@@ -20,7 +20,6 @@ function geralt_enqueue_styles () {
 	wp_enqueue_style('geralt-styles', get_stylesheet_uri());
 	wp_enqueue_style('geralt-styles-mobile', get_template_directory_uri() . '/assets/css/mobile.css');
 	wp_enqueue_style('geralt-styles-utilities', get_template_directory_uri() . '/assets/css/utilities.css');
-	wp_enqueue_style('geralt-styles-card-layouts', get_template_directory_uri() . '/assets/css/card-layouts.css');
 	wp_enqueue_style('geralt-styles-cards', get_template_directory_uri() . '/assets/css/cards.css');
 	// Font awesome
 	wp_enqueue_style('font-awesome-base', '//use.fontawesome.com/releases/v5.2.0/css/fontawesome.css');

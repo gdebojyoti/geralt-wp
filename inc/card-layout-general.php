@@ -24,7 +24,7 @@ function geralt_card_layout_general ($category_id) { echo ''?>
 			<?php
 				$thumbnail_url = get_the_post_thumbnail_url();
 			?>
-			<div class="col-md-4 mt-20_">
+			<div class="col-md-4">
 				<article class="c-card">
 					<div class="c-card__thumbnail" style="background-image: url(<?php echo esc_attr($thumbnail_url) ?>)"></div>
 					<div class="c-card__info">

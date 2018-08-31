@@ -1,3 +1,9 @@
+/* Card styles */
+
+
+
+/* Featured card */
+
 @media (max-width: 767px) {
   .c-card-featured {
     &--small {
@@ -78,6 +84,9 @@
     }
   }
 }
+
+
+/* Generic card */
 
 .c-card {
   position: relative;
