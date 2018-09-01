@@ -76,6 +76,11 @@ a:hover {
     margin-top: 70px;
   }
 }
+@media (min-width: 1366px) {
+  .container {
+    max-width: 1200px;
+  }
+}
 
 
 /* Layout styles */

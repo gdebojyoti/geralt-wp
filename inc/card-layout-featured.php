@@ -28,10 +28,7 @@ function geralt_card_layout_featured ($category_id) { echo ''?>
 					</div>
 				</div>
 
-				<div class="c-card-featured__categories">
-					<span class="c-card-featured__category">Featured</span>
-					<span class="c-card-featured__category">Cars</span>
-				</div>
+				<?php the_category() ?>
 			</article>
 
 		<?php endwhile ?>
@@ -65,9 +62,7 @@ function geralt_card_layout_featured ($category_id) { echo ''?>
 						</div>
 					</div>
 
-					<div class="c-card-featured__categories">
-						<span class="c-card-featured__category">Featured</span>
-					</div>
+					<?php the_category() ?>
 				</article>
 
 			<?php endif ?>

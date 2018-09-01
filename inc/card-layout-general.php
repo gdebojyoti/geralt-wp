@@ -50,9 +50,7 @@ function geralt_card_layout_general ($category_id, $show_categories = true) { ec
 					</div>
 
 					<?php if ($show_categories) : ?>
-						<div class="c-card__categories">
-							<span class="c-card__category">Featured</span>
-						</div>
+						<?php the_category() ?>
 					<?php endif ?>
 				</article>
 			</div>
