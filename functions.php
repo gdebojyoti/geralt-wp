@@ -11,6 +11,10 @@ if ( ! isset( $content_width ) ) {
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 
+// Register constants
+require_once get_template_directory() . '/inc/constants.php';
+
+
 // load stylesheets
 function geralt_enqueue_styles () {
 	// bootstrap
@@ -92,6 +96,15 @@ function geralt_add_editor_styles() {
 	add_editor_style( 'custom-editor-style.css' );
 }
 add_action( 'admin_init', 'geralt_add_editor_styles' );
+
+
+// Check for themes
+function geralt_theme_dependencies() {
+	if(!class_exists('Geralt_Layouts')) {
+		echo '<div class="error"><p>' . __( GERALT_PLUGIN_MISSING, 'geralt' ) . '</p></div>';
+	}
+}
+add_action( 'admin_notices', 'geralt_theme_dependencies' );
 
 
 // // disables auto-insertion of <p> tags on line breaks while in the editor's Text mode

@@ -18,8 +18,13 @@
 
 <div class="container">
 	<?php
-    require_once get_template_directory() . '/inc/card-layout-general.php'; // Include general card layout definition
-    echo geralt_card_layout_general();
+    require_once get_template_directory() . '/inc/constants.php';
+
+    if( function_exists('geralt_p_card_layout_general') ) {
+      geralt_p_card_layout_general();
+    } else {
+      echo GERALT_PLUGIN_MISSING;
+    }
   ?>
 </div>
 
