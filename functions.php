@@ -118,7 +118,7 @@ function geralt_sc_card_general( $atts = [], $content = null ) {
 	), $atts ) );
 
 	$category_id = get_cat_ID($category);
-	echo geralt_card_layout_general($category_id);
+	echo geralt_card_layout_general($category_id, 'cat');
 }
 add_shortcode( 'card-layout', 'geralt_sc_card_general' );
 

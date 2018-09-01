@@ -1,12 +1,12 @@
 <?php
 
-function geralt_post_sidebar ($arr = [], $sidebar_title = "Recent Posts") { echo ''?>
+function geralt_post_sidebar ($arr = [], $sidebar_title = 'Recent Posts') { echo ''?>
 
   <?php
     $posts = get_posts($arr);
     if( $posts ) : ?>
       <div class="c-post-sidebar">
-        <h2 class="c-post-sidebar__heading u-to"><?php echo $sidebar_title ?></h2>
+        <h2 class="c-post-sidebar__heading u-to"><?php echo esc_attr($sidebar_title) ?></h2>
       
         <?php foreach( $posts as $post ) {
         setup_postdata($post); ?>

@@ -4,7 +4,7 @@
   Author: Grindelwald Designs
   Author URI: https://www.debojyotighosh.com/
   Description: An upcoming multi-purpose WordPress theme by Grindelwald Designs
-  Version: 0.3.0b
+  Version: 0.3.1-b
   License: Themeforest Split Licence
   License URI: -
   Tags: blog, news
@@ -95,28 +95,6 @@ a:hover {
     background-image: url(//via.placeholder.com/350x200);
     background-size: cover;
     background-position: center;
-  }
-}
-
-
-.tag {
-  display: inline-block;
-  position: relative;
-  height: 30px;
-  margin-top: 30px;
-  padding: 0 10px;
-  font-size: 15px;
-  line-height: 27px;
-  color: #fff;
-  background-color: $theme-color;
-  border-radius: 2px 0 0 2px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 100%;
-    border: 15px solid transparent;
-    border-left-color: $theme-color;
   }
 }
 

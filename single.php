@@ -18,17 +18,17 @@
 				<?php
 					$prev_post = get_previous_post();
 					if (!empty( $prev_post )): ?>
-						<a class="c-post-header__post-nav post-header__nav-prev" href="<?php echo $prev_post->guid ?>">
+						<a class="c-post-header__post-nav post-header__nav-prev" href="<?php echo esc_attr($prev_post->guid) ?>">
 							<i class="fa fa-chevron-circle-left u-vam"></i>
-							<span class="c-post-header__nav-text u-to u-vam"><?php echo $prev_post->post_title ?></span>
+							<span class="c-post-header__nav-text u-to u-vam"><?php echo esc_attr($prev_post->post_title) ?></span>
 						</a>
 				<?php endif ?>
 
 				<?php
 					$next_post = get_next_post();
 					if (!empty( $next_post )): ?>
-						<a class="c-post-header__post-nav post-header__nav-next" href="<?php echo $next_post->guid ?>">
-							<span class="c-post-header__nav-text u-to u-vam"><?php echo $next_post->post_title ?></span>
+						<a class="c-post-header__post-nav post-header__nav-next" href="<?php echo esc_attr($next_post->guid) ?>">
+							<span class="c-post-header__nav-text u-to u-vam"><?php echo esc_attr($next_post->post_title) ?></span>
 							<i class="fa fa-chevron-circle-right u-vam"></i>
 						</a>
 				<?php endif ?>
@@ -63,11 +63,11 @@
 							</div>
 						</div>
 
-						<p><?php // the_tags() ?></p>
-						
-						<div class="content post__content">
-						
+						<div class="content c-post__content">
+							
 							<?php the_content() ?>
+							<p><?php the_tags() ?></p>
+
 						</div>
 					</article>
 
@@ -105,7 +105,7 @@
 
 			<?php
 				require_once get_template_directory() . '/inc/post-sidebar.php'; // Include general card layout definition
-				echo geralt_post_sidebar(array( 'numberposts' => 5, 'post__not_in' => array($post->ID) ), 'Recent Posts');
+				echo geralt_post_sidebar(array( 'numberposts' => 5, 'post__not_in' => array($post->ID) ));
 			?>
 		</div>
 	</div>

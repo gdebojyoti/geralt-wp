@@ -1,17 +1,17 @@
 <?php
 
-function geralt_card_layout_general ($category_id, $show_categories = true) { echo ''?>
+function geralt_card_layout_general ($id = 0, $label = 'cat') { echo ''?>
 
 <div class="row section">
 	<div class="col-md-12">
-		<h2 class="u-to"><?php echo $category_id ? get_cat_name($category_id) : "Latest posts" ?></h2>
+		<h2 class="u-to"><?php echo esc_attr($id ? get_cat_name($id) : "Latest posts") ?></h2>
 	</div>
 </div>
 <div class="row">
 	
 	<?php
 		$args = array(
-			'cat'            => $category_id,
+			$label => $id,
 			'posts_per_page' => 10 // 10 posts
 		);
 		$wp_query = new WP_Query( $args );
@@ -49,7 +49,7 @@ function geralt_card_layout_general ($category_id, $show_categories = true) { ec
 						</div>
 					</div>
 
-					<?php if ($show_categories) : ?>
+					<?php if (!($label == 'cat' && $id != 0)) : ?>
 						<?php the_category() ?>
 					<?php endif ?>
 				</article>

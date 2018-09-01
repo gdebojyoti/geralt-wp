@@ -19,7 +19,7 @@
 <div class="container">
 	<?php
     require_once get_template_directory() . '/inc/card-layout-general.php'; // Include general card layout definition
-    echo geralt_card_layout_general(0);
+    echo geralt_card_layout_general();
   ?>
 </div>
 
