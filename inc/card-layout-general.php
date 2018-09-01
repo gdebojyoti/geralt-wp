@@ -4,7 +4,7 @@ function geralt_card_layout_general ($category_id, $show_categories = true) { ec
 
 <div class="row section">
 	<div class="col-md-12">
-		<h2 class="mt-70 txt-o"><?php echo $category_id ? get_cat_name($category_id) : "Latest posts" ?></h2>
+		<h2 class="u-to"><?php echo $category_id ? get_cat_name($category_id) : "Latest posts" ?></h2>
 	</div>
 </div>
 <div class="row">

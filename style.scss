@@ -4,7 +4,7 @@
   Author: Grindelwald Designs
   Author URI: https://www.debojyotighosh.com/
   Description: An upcoming multi-purpose WordPress theme by Grindelwald Designs
-  Version: 0.2.2
+  Version: 0.3.0b
   License: Themeforest Split Licence
   License URI: -
   Tags: blog, news
@@ -121,78 +121,25 @@ a:hover {
 }
 
 
-.article-full-width {
-  margin-top: 30px;
-
-  .title {
-    margin: 0;
-    font-size: 24px;
-    color: #000;
-    transition: color .2s;
-
-    &:hover {
-      color: $theme-color;
-    }
-  }
-
-  .details {
-    margin-top: 15px;
-  }
-
-  .detail {
-    margin-right: 10px;
-    font-size: 14px;
-    color: #777;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
-  .post-categories {
-    display: inline-block;
-    margin-bottom: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .author {
-    color: $theme-color;
-  }
-  
-  .thumbnail {
-    height: 300px;
-    margin-top: 20px;
-    background-image: url(//via.placeholder.com/350x200);
-    background-size: cover;
-    background-position: center;
-  }
-
-  .content {
-    margin-top: 20px;
-  }
-}
-
-
 /* Post navigation options */
 
-.post-navigation {
-  margin-top: 30px;
+// .post-navigation {
+//   margin-top: 30px;
   
-  .screen-reader-text {
-    display: none;
-  }
+//   .screen-reader-text {
+//     display: none;
+//   }
   
-  .nav-links {
-    display: flex;
-    justify-content: space-between;
+//   .nav-links {
+//     display: flex;
+//     justify-content: space-between;
     
-    & > div {
-    display: inline-block;
-      vertical-align: middle;
-    }
-  }
-}
+//     & > div {
+//     display: inline-block;
+//       vertical-align: middle;
+//     }
+//   }
+// }
 
 
 /* Comments */
