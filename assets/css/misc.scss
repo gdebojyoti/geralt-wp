@@ -1,0 +1,11 @@
+/* Miscellaneous components */
+
+.c-section {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .c-section {
+    margin-top: 70px;
+  }
+}

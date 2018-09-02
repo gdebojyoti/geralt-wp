@@ -18,7 +18,14 @@ $theme-color: #e74c3c;
 
 
 
-/* Primary styles */
+/* Imports */
+@import "assets/css/misc.scss";
+@import "assets/css/overrides-wp.scss";
+@import "assets/css/overrides-bootstrap.scss";
+
+
+
+/* Base styles */
 
 body {
   box-sizing: border-box;
@@ -37,13 +44,6 @@ h2 {
   text-transform: uppercase;
 }
 
-
-/* temporary; for theme check */
-.wp-caption, .wp-caption-text, .sticky, .screen-reader-text, .gallery-caption, .bypostauthor, .alignright, .alignleft, .aligncenter {
-  font: inherit;
-}
-
-
 a, a:hover {
   color: $theme-color;
   text-decoration: none;
@@ -52,76 +52,23 @@ a:hover {
   color: inherit;
 }
 
-.jumbotron {
-  color: #fff;
-  background-image: linear-gradient(45deg,rgba(132,13,121,.88),rgba(208,44,180,.31));
-  border-radius: 0;
-}
-
-.section {
-  margin-top: 40px;
-}
-
-.footer {
-  width: 100%;
-  margin-top: 70px;
-  padding: 30px 0;
-  border-top: 1px solid lightgray;
-  line-height: 20px;
-  background-color: #f5f5f5;
+blockquote {
+  padding-left: 20px;
+  border-left: 5px solid rgba(0,0,0,1);
+  font-size: 20px;
+  color: rgba(0,0,0,.54);
+  font-style: italic;
 }
 
 @media (min-width: 768px) {
-  .section {
-    margin-top: 70px;
-  }
-}
-@media (min-width: 1366px) {
-  .container {
-    max-width: 1200px;
+  blockquote {
+    margin: 3rem 50px;
   }
 }
 
 
-/* Layout styles */
 
-.two-card-layout {
-  .card {
-    min-width: calc(50% - 30px);
-    max-width: calc(50% - 30px);
-  }
-  .card-img-top {
-    height: 200px;
-    background-image: url(//via.placeholder.com/350x200);
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-
-/* Post navigation options */
-
-// .post-navigation {
-//   margin-top: 30px;
-  
-//   .screen-reader-text {
-//     display: none;
-//   }
-  
-//   .nav-links {
-//     display: flex;
-//     justify-content: space-between;
-    
-//     & > div {
-//     display: inline-block;
-//       vertical-align: middle;
-//     }
-//   }
-// }
-
-
-/* Comments */
-
-.comment-respond {
-  margin-top: 30px;
+/* Envato theme check */
+.wp-caption, .wp-caption-text, .sticky, .screen-reader-text, .gallery-caption, .bypostauthor, .alignright, .alignleft, .aligncenter {
+  font: inherit;
 }
